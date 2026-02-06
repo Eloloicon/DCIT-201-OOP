@@ -1,6 +1,6 @@
 public class StudentGrading {
     public boolean validateScore(double score) {
-        return score >= 0;
+        return score >= 0 && score <= 100;
     }
 
     public char calculateLetterGrade(double score) {
@@ -24,9 +24,8 @@ public class StudentGrading {
     }
 
     public void executeGradeReport(double score) {
-        char letterGrade = ' ';
         if (validateScore(score)) {
-            letterGrade = calculateLetterGrade(score);
+            char letterGrade = calculateLetterGrade(score);
             displayPerformanceMessage(letterGrade);
         } else {
             System.out.println("Invalid Score");
